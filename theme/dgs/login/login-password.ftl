@@ -27,13 +27,13 @@
           ${msg("doLogIn")}
         </@button.kw>
       </@buttonGroup.kw>
-      <#if realm.resetPasswordAllowed>
+    </@form.kw>
+     <#if realm.resetPasswordAllowed>
         <div class="flex items-center justify-between">
           <@link.kw color="primary" href=url.loginResetCredentialsUrl size="small">
             ${msg("doForgotPassword")}
           </@link.kw>
         </div>
       </#if>
-    </@form.kw>
   </#if>
 </@layout.registrationLayout>

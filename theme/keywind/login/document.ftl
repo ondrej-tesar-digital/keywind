@@ -23,6 +23,8 @@
     </#list>
   </#if>
 
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap&subset=latin-ext" rel="stylesheet">
+
   <#if script?has_content>
     <script defer src="${url.resourcesPath}/${script}" type="module"></script>
   </#if>

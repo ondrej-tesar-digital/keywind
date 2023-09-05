@@ -12,13 +12,13 @@
 
   <#switch size>
     <#case "medium">
-      <#assign sizeClass="px-4 py-2 text-sm">
+      <#assign sizeClass="px-4 py-4 text-sm">
       <#break>
     <#case "small">
-      <#assign sizeClass="px-2 py-1 text-xs">
+      <#assign sizeClass="px-2 py-2 text-xs">
       <#break>
     <#default>
-      <#assign sizeClass="px-4 py-2 text-sm">
+      <#assign sizeClass="px-4 py-4 text-sm">
   </#switch>
 
   <${component}

@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
 /**
@@ -14,7 +15,7 @@ module.exports = {
       colors: {
         primary: colors.blue,
         secondary: colors.gray,
-
+       
         provider: {
           bitbucket: '#0052CC',
           discord: '#5865F2',
@@ -32,6 +33,9 @@ module.exports = {
           stackoverflow: '#F58025',
           twitter: '#1DA1F2',
         },
+      },
+      fontFamily: {
+        sans: ['IBM Plex Sans'].concat(defaultTheme.fontFamily.sans),
       },
     },
   },
