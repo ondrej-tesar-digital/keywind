@@ -3,7 +3,7 @@
   "name": "keywind",
   "scripts": {
     "build": "tsc && vite build",
-    "build:jar": "vite-node scripts/build",
+    "build:jar": "npm run build && vite-node scripts/build",
     "dev": "vite build --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
