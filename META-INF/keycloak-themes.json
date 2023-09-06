@@ -6,7 +6,7 @@
     },
     {
       "name": "dgs",
-      "types": ["login"]
+      "types": ["login", "email"]
     }
   ]
 }
