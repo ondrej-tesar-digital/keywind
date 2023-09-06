@@ -22,11 +22,6 @@
         name="password"
         type="password"
       />
-      <@buttonGroup.kw>
-        <@button.kw color="primary" name="login" type="submit">
-          ${msg("doLogIn")}
-        </@button.kw>
-      </@buttonGroup.kw>
       <#if realm.resetPasswordAllowed>
         <div class="flex items-center justify-between">
           <@link.kw color="primary" href=url.loginResetCredentialsUrl size="small">
@@ -34,6 +29,11 @@
           </@link.kw>
         </div>
       </#if>
+      <@buttonGroup.kw>
+        <@button.kw color="primary" name="login" type="submit">
+          ${msg("doLogIn")}
+        </@button.kw>
+      </@buttonGroup.kw>
     </@form.kw>
   </#if>
 </@layout.registrationLayout>
