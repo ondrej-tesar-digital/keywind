@@ -1,7 +1,7 @@
 <#import "/components/atoms/document.ftl" as document>
 <#import "/components/atoms/body.ftl" as body>
 
-<#macro emailLayout link_expiration title emailBody link after_link_body gray_block is_logo_visible=false logo_height=32>
+<#macro emailLayout link_expiration title emailBody linkMacro linkHref after_link_body gray_block is_logo_visible=false logo_height=32>
   <!DOCTYPE html>
   <html lang="cs" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
     <head>
@@ -40,8 +40,8 @@
                                                     <@emailBody />
                                                   </#if>
                                                 </div>
-                                                  <#if link??>
-                                                    <@link linkText="hashtag" linkExpiration=linkExpiration />
+                                                  <#if linkMacro??>
+                                                    <@linkMacro linkText=linkHref linkExpiration=linkExpiration />
                                                   </#if>
                                                 <div style="font-weight: normal; margin: 0 0 40px;">
                                                   <#if after_link_body??>
