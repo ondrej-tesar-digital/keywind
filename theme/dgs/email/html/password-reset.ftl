@@ -1,6 +1,6 @@
 <#import "template.ftl" as layout>
 
-<#macro link linkText linkExpiration>
+<#macro linkMacro linkText linkExpiration>
     <table style="width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation">
         <tr>
             <td style="padding-bottom: 16px;">
@@ -49,7 +49,8 @@
     is_logo_visible = true
     title = msg("resetPassword")
     emailBody = body
-    link = link
+    linkMacro = linkMacro
+    linkHref = link
     link_expiration = linkExpiration
     gray_block = gray_block
     after_link_body = after_link_body
