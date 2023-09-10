@@ -17,6 +17,7 @@
   displayRequiredFields=false
   script=""
   showAnotherWayIfPresent=true
+  isUsernameAndPassword=false
 >
   <#assign cardHeader>
     <@logo.kw>
@@ -33,11 +34,13 @@
         </@heading.kw>
       </#if>
       <#nested "show-username">
-      <@username.kw
-        linkHref=url.loginRestartFlowUrl
-        linkTitle=msg("restartLoginTooltip")
-        name=auth.attemptedUsername
-      />
+      <#if !isUsernameAndPassword>
+        <@username.kw
+          linkHref=url.loginRestartFlowUrl
+          linkTitle=msg("restartLoginTooltip")
+          name=auth.attemptedUsername
+        />
+      </#if>
     </#if>
   </#assign>
 
