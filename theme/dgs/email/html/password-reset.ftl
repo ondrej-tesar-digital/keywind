@@ -1,4 +1,6 @@
 <#import "template.ftl" as layout>
+<#import "/partial/dont-share.ftl" as dontShare>
+<#import "/partial/alternative-method.ftl" as alternativeMethod>
 
 <#macro linkMacro linkText linkExpiration>
     <table style="width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -23,13 +25,13 @@
     </table>
 </#macro>
 
-<#macro gray_block>
+<#macro gray_block linkText>
     <div style="margin-bottom: 24px;">
         <p style="font-weight: 600; font-size: 14px; margin: 0 0 8px;">Proč Vám posíláme tuto zprávu?</p>
         <p style="margin: 0 0 0;">Tuto zprávu jste obdrželi na základě požadavku na obnovení hesla ve službě digisign.org. V případě že se jedná o omyl nebo chybu, můžete ji ignorovat.</p>
     </div>
-    do not share partial <br>
-    alternative method partial with link
+    <@dontShare.kw />
+    <@alternativeMethod.kw link=linkText />
 </#macro>
 
 <#macro body>
@@ -46,7 +48,7 @@
 
 
 <@layout.emailLayout
-    is_logo_visible = true
+    isLogoVisible = true
     title = msg("resetPassword")
     emailBody = body
     linkMacro = linkMacro

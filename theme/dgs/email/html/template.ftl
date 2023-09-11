@@ -1,7 +1,7 @@
 <#import "/components/atoms/document.ftl" as document>
 <#import "/components/atoms/body.ftl" as body>
 
-<#macro emailLayout link_expiration title emailBody linkMacro linkHref after_link_body gray_block is_logo_visible=false logo_height=32>
+<#macro emailLayout link_expiration title emailBody linkMacro linkHref after_link_body gray_block isLogoVisible=false logoHeight=32>
   <!DOCTYPE html>
   <html lang="cs" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
     <head>
@@ -23,7 +23,7 @@
                                                     <tr>
                                                         <td>
                                                             <img
-                                                                src="imageSource"
+                                                                src="${url.resourcesPath}/img/logo.png"
                                                                 class="sm-mb-20"
                                                                 height="${logoHeight}"
                                                                 alt="Logo"
@@ -54,7 +54,7 @@
                                     <tr>
                                         <td class="sm-px-16" style="background-color: #e0e0e0; font-size: 14px; line-height: 20px; padding: 32px 32px 8px; text-align: left; color: #161616;" bgcolor="#e0e0e0" align="left">
                                           <#if gray_block??>
-                                            <@gray_block />
+                                            <@gray_block linkText=linkHref />
                                           </#if>
                                         </td>
                                     </tr>
