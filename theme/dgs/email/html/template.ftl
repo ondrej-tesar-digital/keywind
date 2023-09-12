@@ -1,7 +1,7 @@
 <#import "/components/atoms/document.ftl" as document>
 <#import "/components/atoms/body.ftl" as body>
 
-<#macro emailLayout link_expiration title emailBody linkMacro linkHref after_link_body gray_block isLogoVisible=false logoHeight=32>
+<#macro emailLayout title isLogoVisible=false logoHeight=32>
   <!DOCTYPE html>
   <html lang="cs" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
     <head>
@@ -36,26 +36,18 @@
                                             <div style="font-size: 14px; line-height: 20px; color: #262626;">
                                                 <div style="font-weight: 600; font-size: 24px; margin: 0 0 24px;">${title}</div>
                                                 <div style="font-weight: normal; margin: 0 0 40px;">
-                                                  <#if emailBody??>
-                                                    <@emailBody />
-                                                  </#if>
+                                                  <#nested "emailBody">
                                                 </div>
-                                                  <#if linkMacro??>
-                                                    <@linkMacro linkText=linkHref linkExpiration=linkExpiration />
-                                                  </#if>
+                                                  <#nested "linkBody">
                                                 <div style="font-weight: normal; margin: 0 0 40px;">
-                                                  <#if after_link_body??>
-                                                    <@after_link_body />
-                                                  </#if>
+                                                  <#nested "afterLinkBody">
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="sm-px-16" style="background-color: #e0e0e0; font-size: 14px; line-height: 20px; padding: 32px 32px 8px; text-align: left; color: #161616;" bgcolor="#e0e0e0" align="left">
-                                          <#if gray_block??>
-                                            <@gray_block linkText=linkHref />
-                                          </#if>
+                                          <#nested "grayBlock">
                                         </td>
                                     </tr>
                                     <tr>
