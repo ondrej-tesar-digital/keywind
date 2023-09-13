@@ -1,5 +1,5 @@
-<#macro kw>
+<#macro kw alt>
   <div class="font-bold text-2xl">
-    <#nested>
+    <img src="${url.resourcesPath}/img/logo.png" alt="${alt}"/>
   </div>
 </#macro>
